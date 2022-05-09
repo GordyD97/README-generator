@@ -1,13 +1,21 @@
 
         #Title
 
-        test
+        lee
+        
         ##License
+        
         [![License](https://img.shields.io/badge/License-BSD_3--Clause-blue.svg)](https://opensource.org/licenses/BSD-3-Clause)
+        
         ##Username
-        test
+       
+        lee01
+        
         ####Description
-        test
+        
+        lee
+       
         ###Email
-        test
+       
+        lee@lol.com
         

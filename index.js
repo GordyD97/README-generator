@@ -1,77 +1,117 @@
-function init() {
+const inquirer = require('inquirer');
 
+const fs = require('fs');
+const md = require('./generateMarkdown');
+const fileName = "README.md"
+
+const questions = [
+    {
+        type: 'input',
+        name: 'title',
+        message: 'What is your project title?',
+    },
+    {
+        type: 'input',
+        name: 'description',
+        message: 'What is the description of the application?'
+    },
+    {
+        type: 'list',
+        message: 'What kind of license should your project have?',
+        name: 'license',
+        choices: ['MIT', 'GNU'],
+        default: ['MIT'],
+    },
+    {
+        type: 'input',
+        name: 'username',
+        message: 'What is your github username?'
+    },
+    {
+        type: 'input',
+        name: 'email',
+        message: 'what is your preferred email?'
+    },
+    {
+        type: 'input',
+        message: 'Want to contribute?',
+        name: 'contributing',
+    },
+    {
+        type: 'input',
+        message: 'What will this site be used for?',
+        name: 'usage',
+    },
+    {
+        type: 'input',
+        message: 'What type of installation?',
+        name: 'installation',
+    }
+];
+
+
+
+  
+    // .then(answers => {
+    //     console.log(answers.name);
+    //     console.log(answers.license);
+
+    //     const license = answers.license
+    //     const dataFile =
+
+    //         `
+    //     #Title
+
+    //     ${answers.title}
+        
+    //     ##License
+        
+    //     ${license}
+        
+    //     ##Username
+       
+    //     ${answers.username}
+        
+    //     ####Description
+        
+    //     ${answers.description}
+       
+    //     ###Email
+       
+    //     ${answers.email}
+    //     `
+
+    //     fs.writeFile('README.md', dataFile, (err) =>
+    //         err ? console.error(err) : console.log("success!")
+    //     );
+    // }
+    // );
+
+
+function writeToFile(fileName, fileData) {
+    fs.writeFile(fileName, fileData, (err) => {
+        err ? console.Console(err) : console.log('filewritten');
+
+    });
 }
 
-const inquirer = require('inquirer');
-const fs = require('fs');
-console.log(inquirer);
-
-inquirer
-    .prompt([
-        {
-            type: 'input',
-            name: 'title',
-            message: 'What is your project title?',
-        },
-        {
-            type: 'input',
-            name: 'description',
-            message: 'What is the description of the application?'
-        },
-        {
-            type: 'list',
-            name: 'license',
-            message: 'Choose a liscence & badge',
-            choices: ['[![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)', '[![License](https://img.shields.io/badge/License-Boost_1.0-lightblue.svg)](https://www.boost.org/LICENSE_1_0.txt)', '[![License](https://img.shields.io/badge/License-BSD_3--Clause-blue.svg)](https://opensource.org/licenses/BSD-3-Clause)', '[![License](https://img.shields.io/badge/License-BSD_2--Clause-orange.svg)](https://opensource.org/licenses/BSD-2-Clause)']
-        },
-        {
-            type: 'input',
-            name: 'username',
-            message: 'What is your github username?'
-        },
-        {
-            type: 'input',
-            name: 'email',
-            message: 'what is your preferred email?'
-        }
-    ])
+function init() {
+    inquirer
+    .prompt(questions)
     .then(answers => {
-        console.log(answers.name);
-        console.log(answers.license);
+        const fileData = md(answers)
+        writeToFile(fileName, fileData)
+    });
+}
+init();
 
-        const license = answers.license
-        const dataFile =
+// function writeToFile(fileName, fileData) {
+//     fs.writeFile(fileName, fileData, (err) => {
+//         err ? console.Console(err) : console.log('filewritten');
 
-        `
-        #Title
+//     });
+// }
 
-        ${answers.title}
-        
-        ##License
-        
-        ${license}
-        
-        ##Username
-       
-        ${answers.username}
-        
-        ####Description
-        
-        ${answers.description}
-       
-        ###Email
-       
-        ${answers.email}
-        `
-
-        fs.writeFile('answers.md', dataFile, (err) =>
-            err ? console.error(err) : console.log("success!")
-        );
-    }
-    );
-
-    init();
-    
 //     WHEN I enter my project title
 // THEN this is displayed as the title of the README
 // WHEN I enter a description, installation instructions, usage information, contribution guidelines, and test instructions
