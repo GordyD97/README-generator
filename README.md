@@ -1,41 +1,8 @@
+# Gordon Draine's Read me Generator
 
-    ![License: IPL 1.0](https://img.shields.io/badge/License-IPL_1.0-blue.svg)
-  # asdf
-  ----
-  ## Table of Contents
-  - [License](#license)
-  - [Description](#description)
-  - [Installation](#installation)
-  - [Usage](#usage)
-  - [Contributions](#contributing)
-  - [Questions](#Questions)
-  
-  ## Description
-    sadf
-  ## License
-    IBM
-    (license) =>{
-  switch (license) {
-    case 'MIT':
-      return '![License: MIT](https://opensource.org/licenses/MIT)';
-    case 'GNU':
-      return '![License: GPL v3](https://www.gnu.org/licenses/gpl-3.0)';
-    case 'IBM':
-      return '(https://opensource.org/licenses/IPL-1.0)';
-    case 'Mozilla':
-      return '(https://opensource.org/licenses/MPL-2.0)';
-    default:
-      return '';
-  };
-}
-  ## Installation
-    asdf
-  ## Usage
-    sadf
-  ## Contributions
-    asdf
-  ## Questions
-    asdf
-  ----
-    
-  
+## This Appllication is a readme generator for a professional developer, a developer can use this as a template to include on their github portfolio to have a seemless readme file. 
+
+## In using this application the developer will be promted with questions on their vs code terminal. Each answer to the prompt that is give will be posted to the read me with a pre written template. The template is at a professional standard and will be good for future employers to view.
+
+### Working app 
+![./images/Project_10_.gif]

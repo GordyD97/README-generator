@@ -1,6 +1,6 @@
 // TODO: Create a function that returns a license badge based on which license is passed in
 // If there is no license, return an empty string
-const renderLicenseBadge = (license) => {
+function renderLicenseBadge(license){
   switch (license) {
     case 'MIT':
       return '![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)';
@@ -17,7 +17,7 @@ const renderLicenseBadge = (license) => {
 
 // TODO: Create a function that returns the license link
 // If there is no license, return an empty string
-const renderLicenseLink = (license) =>{
+function renderLicenseLink(license) {
   switch (license) {
     case 'MIT':
       return '![License: MIT](https://opensource.org/licenses/MIT)';
@@ -34,8 +34,10 @@ const renderLicenseLink = (license) =>{
 
 // TODO: Create a function that returns the license section of README
 // If there is no license, return an empty string
-const renderLicenseSection = (license) =>{
-  
+function renderLicenseSection(license){ 
+ return
+  `[license]${ license };`
+
 }
    
 
@@ -43,7 +45,7 @@ const renderLicenseSection = (license) =>{
 const generateMarkdown =(answers) =>{
   return (
     `
-    ${renderLicenseBadge(answers.license)}
+    
   # ${answers.title}
   ----
   ## Table of Contents
@@ -66,6 +68,7 @@ const generateMarkdown =(answers) =>{
   ## Contributions
     ${answers.contributing}
   ## Questions
+  Git hub userName :
     ${answers.username}
   ----
     
