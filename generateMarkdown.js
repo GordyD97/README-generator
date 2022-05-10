@@ -6,6 +6,10 @@ const renderLicenseBadge = (license) => {
       return '![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)';
     case 'GNU':
       return '![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)';
+    case 'IBM':
+      return '![License: IPL 1.0](https://img.shields.io/badge/License-IPL_1.0-blue.svg)';
+    case 'Mozilla':
+      return '![License: MPL 2.0](https://img.shields.io/badge/License-MPL_2.0-brightgreen.svg)';  
     default:
       return '';
   };
@@ -19,6 +23,10 @@ const renderLicenseLink = (license) =>{
       return '![License: MIT](https://opensource.org/licenses/MIT)';
     case 'GNU':
       return '![License: GPL v3](https://www.gnu.org/licenses/gpl-3.0)';
+    case 'IBM':
+      return '(https://opensource.org/licenses/IPL-1.0)';
+    case 'Mozilla':
+      return '(https://opensource.org/licenses/MPL-2.0)';
     default:
       return '';
   };
@@ -35,7 +43,8 @@ const renderLicenseSection = (license) =>{
 const generateMarkdown =(answers) =>{
   return (
     `
-  # ${answers.file}
+    ${renderLicenseBadge(answers.license)}
+  # ${answers.title}
   ----
   ## Table of Contents
   - [License](#license)
@@ -43,22 +52,21 @@ const generateMarkdown =(answers) =>{
   - [Installation](#installation)
   - [Usage](#usage)
   - [Contributions](#contributing)
-  - [Tests](#testing)
+  - [Questions](#Questions)
   
   ## Description
     ${answers.description}
   ## License
     ${answers.license}
+    ${renderLicenseLink}
   ## Installation
     ${answers.installation}
   ## Usage
     ${answers.usage}
   ## Contributions
     ${answers.contributing}
-  ## Testing
-    ${answers.tests}
   ## Questions
-   [Testing file.]
+    ${answers.username}
   ----
     
   `);

@@ -1,5 +1,6 @@
 
-  # undefined
+    ![License: IPL 1.0](https://img.shields.io/badge/License-IPL_1.0-blue.svg)
+  # asdf
   ----
   ## Table of Contents
   - [License](#license)
@@ -7,22 +8,34 @@
   - [Installation](#installation)
   - [Usage](#usage)
   - [Contributions](#contributing)
-  - [Tests](#testing)
+  - [Questions](#Questions)
   
   ## Description
-    gsdfg
+    sadf
   ## License
-    GNU
+    IBM
+    (license) =>{
+  switch (license) {
+    case 'MIT':
+      return '![License: MIT](https://opensource.org/licenses/MIT)';
+    case 'GNU':
+      return '![License: GPL v3](https://www.gnu.org/licenses/gpl-3.0)';
+    case 'IBM':
+      return '(https://opensource.org/licenses/IPL-1.0)';
+    case 'Mozilla':
+      return '(https://opensource.org/licenses/MPL-2.0)';
+    default:
+      return '';
+  };
+}
   ## Installation
-    gsdfg
+    asdf
   ## Usage
-    sgdfg
+    sadf
   ## Contributions
-    sdfg
-  ## Testing
-    undefined
+    asdf
   ## Questions
-   [Testing file.]
+    asdf
   ----
     
   

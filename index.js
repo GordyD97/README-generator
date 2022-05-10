@@ -19,7 +19,7 @@ const questions = [
         type: 'list',
         message: 'What kind of license should your project have?',
         name: 'license',
-        choices: ['MIT', 'GNU'],
+        choices: ['MIT', 'GNU','IBM','Mozilla'],
         default: ['MIT'],
     },
     {
